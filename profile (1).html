@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haneesh - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #00aaff;
+            scroll-behavior: smooth;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #00aaff;
+        }
+
+        p {
+            font-size: 1.1em;
+            max-width: 80%;
+            line-height: 1.6;
+            margin: auto;
+        }
+
+        /* Navigation Bar */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #000;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 170, 255, 0.5);
+        }
+
+        .nav a {
+            color: #00aaff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-block;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .nav a:hover {
+            color: #0077cc;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease-in-out forwards;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* Skills List */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90%;
+        }
+
+        .skill {
+            background: #001a33;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px #0077cc;
+            font-size: 1em;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+        }
+
+        /* Social Media Buttons */
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            font-size: 2em;
+            margin: 0 10px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-buttons a:hover {
+            transform: scale(1.2);
+        }
+
+        .fa-instagram {
+            color: #e4405f;
+        }
+
+        .fa-discord {
+            color: #7289da;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .nav a {
+                font-size: 0.9em;
+                margin: 0 8px;
+            }
+
+            .skill {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+
+            .social-buttons a {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('summary')">Summary</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section active">
+        <h1>About Me</h1>
+        <p>Hi, I'm Haneesh, a Full-Stack Developer, 2D Animator, and Video Editor. I specialize in creating interactive, animated, and professional web experiences using cutting-edge technologies.</p>
+        <p>I'm from Andhra Pradesh, studying the CBSE syllabus, and a huge anime fan. I love late-night coding, working on AI projects, and crafting stunning UI designs.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h1>My Skills</h1>
+        <div class="skills-list">
+            <div class="skill">Full-Stack Web Development</div>
+            <div class="skill">HTML, CSS, JavaScript</div>
+            <div class="skill">React.js & Node.js</div>
+            <div class="skill">Python (AI & Automation)</div>
+            <div class="skill">2D Animation</div>
+            <div class="skill">CapCut Video Editing</div>
+            <div class="skill">UI/UX Design</div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="section">
+        <h1>Why Me?</h1>
+        <p>I'm a dedicated developer, designer, and editor who loves pushing creative and technical boundaries. Whether it's building highly-animated, mind-blowing websites, crafting manga & animation, or working on AI-powered projects, I always strive for excellence. My goal is to merge technology and art to create unique digital experiences.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h1>Let's Connect</h1>
+        <p>If you want to collaborate, discuss ideas, or just chat, feel free to reach out on Instagram or Discord.</p>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/tejahaneesh?igsh=Z2gwbGhmbmptc3Yz" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://discord.gg/yourserver" target="_blank" class="fa fa-discord"></a>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+    <script>
+    if (window.innerWidth <= 768) {
+        alert("For the best experience, switch to Desktop Mode in your browser settings.");
+    }
+</script>
+
+</body>
+</html>
